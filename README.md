@@ -4,27 +4,41 @@ A simple example of using libpython-clj with built-in modules
 
 ## Usage
 
+### Install the package dependencies
 ```
-sudo apt-get install virtualenv
-
-lein new app interop
-cd interop
-add [clj-python/libpython-clj "1.38"] to dependencies
-lein deps
-virtualenv --python=python3 env # creates an 'env' dir
-
-./env/bin/pip3 install ./funniest
+$ sudo apt-get install virtualenv
 ```
 
-Validate with
+### Create a virtualenv folder and install the example Python package
 
 ```
-./env/bin/python
+$ virtualenv --python=python3 env # creates an 'env' dir
+$ ./env/bin/pip3 install ./funniest
+```
+
+### Validate the package installation with
+
+```
+$ ./env/bin/python
 Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
 [GCC 8.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import funniest
 >>> funniest.joke()
+```
+
+### Install the Clojure dependencies
+
+```
+$ lein deps
+```
+
+### Run the example
+
+```
+$ lein run
+...
+IT WORKS!
 ```
 
 ## License
