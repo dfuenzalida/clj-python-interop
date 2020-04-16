@@ -1,6 +1,6 @@
-# interop
+# python-interop
 
-A simple example of using libpython-clj with built-in and custom modules
+A simple example of using libpython-clj with built-in modules
 
 ## Usage
 
