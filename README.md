@@ -1,36 +1,35 @@
 # interop
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+A simple example of using libpython-clj with built-in and custom modules
 
 ## Usage
 
-FIXME: explanation
+```
+sudo apt-get install virtualenv
 
-    $ java -jar interop-0.1.0-standalone.jar [args]
+lein new app interop
+cd interop
+add [clj-python/libpython-clj "1.38"] to dependencies
+lein deps
+virtualenv --python=python3 env # creates an 'env' dir
 
-## Options
+./env/bin/pip3 install ./funniest
+```
 
-FIXME: listing of options this app accepts.
+Validate with
 
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+```
+./env/bin/python
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import funniest
+>>> funniest.joke()
+```
 
 ## License
 
-Copyright © 2020 FIXME
+Copyright © 2020 Denis Fuenzalida
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
