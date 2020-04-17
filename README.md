@@ -1,6 +1,6 @@
 # python-interop
 
-A simple example of using libpython-clj with built-in modules
+A simple example of using libpython-clj with built-in modules and a simple package
 
 ## Usage
 
@@ -9,7 +9,7 @@ A simple example of using libpython-clj with built-in modules
 $ sudo apt-get install virtualenv
 ```
 
-### Create a virtualenv folder and install the example Python package
+### Create a virtualenv folder and install the example Python package (included)
 
 ```
 $ virtualenv --python=python3 env # creates an 'env' dir
@@ -28,19 +28,36 @@ Type "help", "copyright", "credits" or "license" for more information.
 'Wenn ist das Nunstück git und Slotermeyer? Ja! ... Beiherhund das Oder die Flipperwaldt gersput.'
 ```
 
-### Install the Clojure dependencies
+### Interop testing
 
-```
-$ lein deps
+#### Setup
+
+Adjust the properties of your Python runtime on `src/appcompany/python.clj`, in this case we're loading from a `virtualenv` environment, so the path is relative to the current directory:
+
+```clojure
+(initialize-python! "./env/bin/python")
 ```
 
-### Run the example
+#### REPL Testing
 
+Load the file `src/appcompany/funapp.clj` in the REPL and start evaluating the expressions in the `comment` section in the bottom of the file:
+
+```clojure
+(comment
+
+  ;; Encode base 64 in Python and decode in java
+  (-> "IT WORKS!" encode-python decode-java)
+
+  ;; Evaluating this expression should return a string
+  (let [pyjoke (py/from-import funniest joke)]
+       (pyjoke))
+
+  ) ;; end comment
 ```
-$ lein run
-...
-IT WORKS!
-```
+
+## How to create another similar package
+
+See https://github.com/clj-python/clj-template#usage
 
 ## License
 
