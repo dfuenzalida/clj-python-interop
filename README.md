@@ -11,12 +11,18 @@ $ sudo apt-get install virtualenv
 
 ### Create a virtualenv folder and install the example Python package (included)
 
+Create the `env` folder:
+
 ```
-$ virtualenv --python=python3 env # creates an 'env' dir
+$ virtualenv --python=python3 env
+
+Install the example package:
+
+```
 $ ./env/bin/pip3 install ./funniest
 ```
 
-### Validate the package installation with
+### Validate the package installation
 
 ```
 $ ./env/bin/python
