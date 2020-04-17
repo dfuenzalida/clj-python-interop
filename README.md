@@ -15,6 +15,7 @@ Create the `env` folder:
 
 ```
 $ virtualenv --python=python3 env
+```
 
 Install the example package:
 
