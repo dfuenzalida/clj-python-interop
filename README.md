@@ -25,6 +25,7 @@ Python 3.6.9 (default, Nov  7 2019, 10:44:02)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import funniest
 >>> funniest.joke()
+'Wenn ist das Nunstück git und Slotermeyer? Ja! ... Beiherhund das Oder die Flipperwaldt gersput.'
 ```
 
 ### Install the Clojure dependencies
